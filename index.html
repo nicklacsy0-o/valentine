@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💘 Valentine?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #ffe6ee;
+      padding-top: 80px;
+    }
+
+    h1 {
+      color: #d6336c;
+    }
+
+    /* IMAGE — SMALL ON PURPOSE */
+    img.photo {
+      width: 120px !important;
+      max-width: 120px !important;
+      height: auto !important;
+      border-radius: 12px;
+      margin: 15px auto;
+      display: block;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+
+    button {
+      font-size: 18px;
+      padding: 12px 24px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Kyle, will you be my Valentine? 💖</h1>
+
+  <img src="bebe.jpg" alt="Us together" class="photo">
+
+  <button class="yes" onclick="yesClicked()">Yes 💘</button>
+  <button class="no" onclick="noClicked()">No 😅</button>
+
+  <script>
+    function yesClicked() {
+      alert("Yay!! 💕 Happy Valentine’s Day 💖");
+    }
+
+    function noClicked() {
+      alert("That’s okay — still sending love 💗");
+    }
+  </script>
+
+</body>
+</html>
