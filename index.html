@@ -9,8 +9,16 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      background-color: #ffe6ee;
       padding-top: 80px;
+      background-color: #ffe6ee;
+
+      /* Subtle repeating heart pattern */
+      background-image:
+        radial-gradient(circle at 10px 10px, #ffb3c6 2px, transparent 2px),
+        radial-gradient(circle at 25px 25px, #ffccd5 2px, transparent 2px);
+      background-size: 40px 40px;
+
+      overflow-x: hidden;
     }
 
     h1 {
@@ -18,14 +26,13 @@
     }
 
     .photo {
-  width: 80vw;       /* 80% of the viewport width */
-  max-width: 300px;  /* but no bigger than 300px */
-  height: auto;
-  border-radius: 15px; /* optional: rounded corners look nice */
-  margin: 20px auto;  /* center with some space */
-  display: block;
-}
-
+      width: 80vw;
+      max-width: 300px;
+      height: auto;
+      border-radius: 15px;
+      margin: 20px auto;
+      display: block;
+    }
 
     button {
       font-size: 18px;
@@ -43,6 +50,31 @@
 
     .no {
       background-color: #ccc;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 14px;
+      color: rgba(255, 77, 109, 0.6);
+      animation: floatUp 8s linear infinite;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.4);
+        opacity: 0;
+      }
     }
   </style>
 </head>
@@ -62,14 +94,20 @@
     }
 
     function noClicked() {
-      alert("😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢");
+      alert("😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢😢");
+    }
+
+    /* Generate floating hearts */
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDelay = Math.random() * 8 + "s";
+      heart.style.fontSize = 10 + Math.random() * 10 + "px";
+      document.body.appendChild(heart);
     }
   </script>
 
 </body>
 </html>
-
-
-
-
-
